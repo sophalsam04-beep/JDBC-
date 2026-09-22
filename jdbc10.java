@@ -3,6 +3,8 @@
     // ===================================
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
@@ -54,6 +56,29 @@ public class jdbc10{
             Predicate<Integer> isOdd = (b) -> b % 2 ==0;
         System.out.println("is Even : "+isEven.test(4));
         System.out.println("is odd : "+isOdd.test(5));
+
+
+
+            // ===============================
+            // Saving a lot of function in Map
+            // ===============================
+        
+        Map<String, Function<Integer, Integer>> operations = new HashMap<>();
+        Map<String, Function<Double, Double>> binarys = new HashMap<>();
+            operations.put("Square : ", n-> n * n);
+            operations.put("double : ", n -> n * 2);
+            operations.put("binary_a", c -> c * 3);
+            operations.put("binary_b : ", c -> c* c);
+
+                // displaying result
+                    // int
+           System.out.println(operations.get("square").apply(6));
+           System.out.println(operations.get("double").apply(12));
+
+            
+
+
+
 
     
         
